@@ -17,11 +17,11 @@ function defaultCardData() {
     cardData.ag = 3;
     cardData.pa = 3;
     cardData.av = 9;
-    cardData.maModifier = 0;
-    cardData.stModifier = 0;
-    cardData.agModifier = 0;
-    cardData.paModifier = 0;
-    cardData.avModifier = 0;
+    cardData.maModifier = "";
+    cardData.stModifier = "";
+    cardData.agModifier = "";
+    cardData.paModifier = "";
+    cardData.avModifier = "";
     cardData.base64Image = null;
     cardData.imageUrl = null;
     cardData.imageProperties = getDefaultModelImageProperties();
@@ -327,7 +327,7 @@ function readControls() {
     data.pa = document.getElementById("pa").value;
     data.av = document.getElementById("av").value;
     ["ma", "st", "ag", "pa", "av"].forEach(function (stat) {
-        data[stat + "Modifier"] = Number(document.getElementById(stat + "Modifier").value) || 0;
+        data[stat + "Modifier"] = document.getElementById(stat + "Modifier").value;
     });
     data.p_general = document.getElementById("p_general").checked;
     data.p_agility = document.getElementById("p_agility").checked;
@@ -555,15 +555,18 @@ render = function (cardData) {
 }
 
 function drawCharacteristicModifier(modifier, x, y) {
-    const value = Number(modifier) || 0;
-    if (value === 0) return;
+    if (modifier !== "+X" && modifier !== "-X") return;
     const ctx = getContext();
     ctx.save();
-    ctx.font = "bold 27px franklin-gothic-book";
-    ctx.fillStyle = value > 0 ? "#16803c" : "#b4191e";
+    ctx.font = "bold 27px brothers-regular";
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
-    writeScaled((value > 0 ? "+" : "") + value, { x: x, y: y });
+    ctx.lineJoin = "round";
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "white";
+    ctx.fillStyle = "#d5ad55";
+    ctx.strokeText(modifier, x, y);
+    ctx.fillText(modifier, x, y);
     ctx.restore();
 }
 
@@ -631,7 +634,7 @@ async function writeControls(cardData) {
     $("#pa")[0].value = cardData.pa;
     $("#av")[0].value = cardData.av;
     ["ma", "st", "ag", "pa", "av"].forEach(function (stat) {
-        $("#" + stat + "Modifier")[0].value = Number(cardData[stat + "Modifier"]) || 0;
+        $("#" + stat + "Modifier")[0].value = cardData[stat + "Modifier"] || "";
     });
     $("#cardText")[0].value = cardData.cardText;
 
