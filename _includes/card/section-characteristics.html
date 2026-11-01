@@ -44,8 +44,12 @@
                         <label for="ma" data-i18n="card.caracteristics.MA">M</label>
                         <input class="form-control" id="ma" min="0" max="9" name="ma"
                             oninput="onAnyChange()" type="number" value="4">
-                        <label for="maModifier" class="small mt-1">Modifier (+X / -X)</label>
-                        <input class="form-control form-control-sm" id="maModifier" name="maModifier" type="number" min="-9" max="9" step="1" value="0" oninput="onAnyChange()" aria-label="MA modifier">
+                        <label for="maModifier" class="small mt-1">Modifier</label>
+                        <select class="form-control form-control-sm" id="maModifier" name="maModifier" onchange="onAnyChange()" aria-label="MA modifier">
+                            <option value="">None</option>
+                            <option value="+X">+X</option>
+                            <option value="-X">-X</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-sm-2">
@@ -53,8 +57,12 @@
                         <label for="st" data-i18n="card.caracteristics.S">F</label>
                         <input class="form-control" id="st" min="0" max="8" name="st"
                             oninput="onAnyChange()" type="number" value="3">
-                        <label for="stModifier" class="small mt-1">Modifier (+X / -X)</label>
-                        <input class="form-control form-control-sm" id="stModifier" name="stModifier" type="number" min="-9" max="9" step="1" value="0" oninput="onAnyChange()" aria-label="ST modifier">
+                        <label for="stModifier" class="small mt-1">Modifier</label>
+                        <select class="form-control form-control-sm" id="stModifier" name="stModifier" onchange="onAnyChange()" aria-label="ST modifier">
+                            <option value="">None</option>
+                            <option value="+X">+X</option>
+                            <option value="-X">-X</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-sm-2">
@@ -62,8 +70,12 @@
                         <label for="ag" data-i18n="card.caracteristics.AG">AG</label>
                         <input class="form-control" id="ag" min="0" max="6" name="ag"
                             oninput="onAnyChange()" type="number" value="3">
-                        <label for="agModifier" class="small mt-1">Modifier (+X / -X)</label>
-                        <input class="form-control form-control-sm" id="agModifier" name="agModifier" type="number" min="-9" max="9" step="1" value="0" oninput="onAnyChange()" aria-label="AG modifier">
+                        <label for="agModifier" class="small mt-1">Modifier</label>
+                        <select class="form-control form-control-sm" id="agModifier" name="agModifier" onchange="onAnyChange()" aria-label="AG modifier">
+                            <option value="">None</option>
+                            <option value="+X">+X</option>
+                            <option value="-X">-X</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-sm-2">
@@ -71,8 +83,12 @@
                         <label for="pa" data-i18n="card.caracteristics.PA">CP</label>
                         <input class="form-control" id="pa" min="0" max="6" name="pa"
                             oninput="onAnyChange()" type="number" value="3">
-                        <label for="paModifier" class="small mt-1">Modifier (+X / -X)</label>
-                        <input class="form-control form-control-sm" id="paModifier" name="paModifier" type="number" min="-9" max="9" step="1" value="0" oninput="onAnyChange()" aria-label="PA modifier">
+                        <label for="paModifier" class="small mt-1">Modifier</label>
+                        <select class="form-control form-control-sm" id="paModifier" name="paModifier" onchange="onAnyChange()" aria-label="PA modifier">
+                            <option value="">None</option>
+                            <option value="+X">+X</option>
+                            <option value="-X">-X</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-sm-2">
@@ -80,8 +96,12 @@
                         <label for="av" data-i18n="card.caracteristics.AV">AR</label>
                         <input class="form-control" id="av" min="0" max="11" name="av"
                             oninput="onAnyChange()" type="number" value="9">
-                        <label for="avModifier" class="small mt-1">Modifier (+X / -X)</label>
-                        <input class="form-control form-control-sm" id="avModifier" name="avModifier" type="number" min="-9" max="9" step="1" value="0" oninput="onAnyChange()" aria-label="AV modifier">
+                        <label for="avModifier" class="small mt-1">Modifier</label>
+                        <select class="form-control form-control-sm" id="avModifier" name="avModifier" onchange="onAnyChange()" aria-label="AV modifier">
+                            <option value="">None</option>
+                            <option value="+X">+X</option>
+                            <option value="-X">-X</option>
+                        </select>
                     </div>
                 </div>
             </div>
