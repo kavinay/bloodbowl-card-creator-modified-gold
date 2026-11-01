@@ -17,6 +17,11 @@ function defaultCardData() {
     cardData.ag = 3;
     cardData.pa = 3;
     cardData.av = 9;
+    cardData.maModifier = 0;
+    cardData.stModifier = 0;
+    cardData.agModifier = 0;
+    cardData.paModifier = 0;
+    cardData.avModifier = 0;
     cardData.base64Image = null;
     cardData.imageUrl = null;
     cardData.imageProperties = getDefaultModelImageProperties();
@@ -321,6 +326,9 @@ function readControls() {
     data.ag = document.getElementById("ag").value;
     data.pa = document.getElementById("pa").value;
     data.av = document.getElementById("av").value;
+    ["ma", "st", "ag", "pa", "av"].forEach(function (stat) {
+        data[stat + "Modifier"] = Number(document.getElementById(stat + "Modifier").value) || 0;
+    });
     data.p_general = document.getElementById("p_general").checked;
     data.p_agility = document.getElementById("p_agility").checked;
     data.p_devious = document.getElementById("p_devious").checked;
@@ -512,6 +520,13 @@ function drawCardFrame(cardData){
     //AV
     drawNumber(cardData.av, 130, 825, true);
 
+    // Characteristic modifiers are printed beside their corresponding stat icons.
+    drawCharacteristicModifier(cardData.maModifier, 190, 260);
+    drawCharacteristicModifier(cardData.stModifier, 190, 410);
+    drawCharacteristicModifier(cardData.agModifier, 190, 565);
+    drawCharacteristicModifier(cardData.paModifier, 190, 715);
+    drawCharacteristicModifier(cardData.avModifier, 190, 860);
+
 }
 
 render = function (cardData) {
@@ -537,6 +552,19 @@ render = function (cardData) {
     drawCardFrame(cardData);
 
     
+}
+
+function drawCharacteristicModifier(modifier, x, y) {
+    const value = Number(modifier) || 0;
+    if (value === 0) return;
+    const ctx = getContext();
+    ctx.save();
+    ctx.font = "bold 27px franklin-gothic-book";
+    ctx.fillStyle = value > 0 ? "#16803c" : "#b4191e";
+    ctx.textAlign = "left";
+    ctx.textBaseline = "middle";
+    writeScaled((value > 0 ? "+" : "") + value, { x: x, y: y });
+    ctx.restore();
 }
 
 function drawNumber(num,x, y, plus){
@@ -602,6 +630,9 @@ async function writeControls(cardData) {
     $("#ag")[0].value = cardData.ag;
     $("#pa")[0].value = cardData.pa;
     $("#av")[0].value = cardData.av;
+    ["ma", "st", "ag", "pa", "av"].forEach(function (stat) {
+        $("#" + stat + "Modifier")[0].value = Number(cardData[stat + "Modifier"]) || 0;
+    });
     $("#cardText")[0].value = cardData.cardText;
 
     document.getElementById('p_agility').checked = cardData.p_agility;
