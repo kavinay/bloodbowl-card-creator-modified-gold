@@ -562,10 +562,13 @@ function drawCharacteristicModifier(modifier, x, y) {
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
     ctx.lineJoin = "round";
-    ctx.lineWidth = 4;
-    ctx.strokeStyle = "white";
-    ctx.fillStyle = "#d5ad55";
+    ctx.lineWidth = 7;
+    ctx.strokeStyle = "black";
     ctx.strokeText(modifier, x, y);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "white";
+    ctx.strokeText(modifier, x, y);
+    ctx.fillStyle = "#e5a21a";
     ctx.fillText(modifier, x, y);
     ctx.restore();
 }
