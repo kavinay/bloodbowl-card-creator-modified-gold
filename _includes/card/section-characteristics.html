@@ -42,51 +42,54 @@
                 <div class="col-sm-2">
                     <div class="form-group">
                         <label for="ma" data-i18n="card.caracteristics.MA">M</label>
-                        <select class="form-control" id="ma" name="ma" onchange="onAnyChange()" aria-label="MA characteristic">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4" selected>4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="3+X">3+X</option>
-                        </select>
+                        <input class="form-control" id="ma" name="ma" list="maOptions" type="text" value="4" oninput="onAnyChange()" aria-label="MA characteristic" autocomplete="off">
+                        <datalist id="maOptions">
+                            <option value="0"></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                            <option value="7"></option>
+                            <option value="8"></option>
+                            <option value="9"></option>
+                            <option value="3+X"></option>
+                        </datalist>
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="form-group">
                         <label for="st" data-i18n="card.caracteristics.S">F</label>
-                        <select class="form-control" id="st" name="st" onchange="onAnyChange()" aria-label="ST characteristic">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3" selected>3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="3+X">3+X</option>
-                        </select>
+                        <input class="form-control" id="st" name="st" list="stOptions" type="text" value="3" oninput="onAnyChange()" aria-label="ST characteristic" autocomplete="off">
+                        <datalist id="stOptions">
+                            <option value="0"></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                            <option value="7"></option>
+                            <option value="8"></option>
+                            <option value="3+X"></option>
+                        </datalist>
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="form-group">
                         <label for="ag" data-i18n="card.caracteristics.AG">AG</label>
-                        <select class="form-control" id="ag" name="ag" onchange="onAnyChange()" aria-label="AG characteristic">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3" selected>3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="4+ -X">4+ -X</option>
-                        </select>
+                        <input class="form-control" id="ag" name="ag" list="agOptions" type="text" value="3" oninput="onAnyChange()" aria-label="AG characteristic" autocomplete="off">
+                        <datalist id="agOptions">
+                            <option value="0"></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                            <option value="4+ -X"></option>
+                        </datalist>
                     </div>
                 </div>
                 <div class="col-sm-2">
