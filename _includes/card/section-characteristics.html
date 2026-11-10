@@ -42,39 +42,50 @@
                 <div class="col-sm-2">
                     <div class="form-group">
                         <label for="ma" data-i18n="card.caracteristics.MA">M</label>
-                        <input class="form-control" id="ma" min="0" max="9" name="ma"
-                            oninput="onAnyChange()" type="number" value="4">
-                        <label for="maModifier" class="small mt-1">Modifier</label>
-                        <select class="form-control form-control-sm" id="maModifier" name="maModifier" onchange="onAnyChange()" aria-label="MA modifier" style="color: #212529 !important; background-color: #fff !important;">
-                            <option value="" selected style="color: #212529; background-color: #fff;">None</option>
-                            <option value="+X" style="color: #212529; background-color: #fff;">+X</option>
-                            <option value="-X" style="color: #212529; background-color: #fff;">-X</option>
+                        <select class="form-control" id="ma" name="ma" onchange="onAnyChange()" aria-label="MA characteristic">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4" selected>4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="3+X">3+X</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="form-group">
                         <label for="st" data-i18n="card.caracteristics.S">F</label>
-                        <input class="form-control" id="st" min="0" max="8" name="st"
-                            oninput="onAnyChange()" type="number" value="3">
-                        <label for="stModifier" class="small mt-1">Modifier</label>
-                        <select class="form-control form-control-sm" id="stModifier" name="stModifier" onchange="onAnyChange()" aria-label="ST modifier" style="color: #212529 !important; background-color: #fff !important;">
-                            <option value="" selected style="color: #212529; background-color: #fff;">None</option>
-                            <option value="+X" style="color: #212529; background-color: #fff;">+X</option>
-                            <option value="-X" style="color: #212529; background-color: #fff;">-X</option>
+                        <select class="form-control" id="st" name="st" onchange="onAnyChange()" aria-label="ST characteristic">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3" selected>3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="3+X">3+X</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-sm-2">
                     <div class="form-group">
                         <label for="ag" data-i18n="card.caracteristics.AG">AG</label>
-                        <input class="form-control" id="ag" min="0" max="6" name="ag"
-                            oninput="onAnyChange()" type="number" value="3">
-                        <label for="agModifier" class="small mt-1">Modifier</label>
-                        <select class="form-control form-control-sm" id="agModifier" name="agModifier" onchange="onAnyChange()" aria-label="AG modifier" style="color: #212529 !important; background-color: #fff !important;">
-                            <option value="" selected style="color: #212529; background-color: #fff;">None</option>
-                            <option value="+X" style="color: #212529; background-color: #fff;">+X</option>
-                            <option value="-X" style="color: #212529; background-color: #fff;">-X</option>
+                        <select class="form-control" id="ag" name="ag" onchange="onAnyChange()" aria-label="AG characteristic">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3" selected>3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="4+ -X">4+ -X</option>
                         </select>
                     </div>
                 </div>
@@ -83,12 +94,6 @@
                         <label for="pa" data-i18n="card.caracteristics.PA">CP</label>
                         <input class="form-control" id="pa" min="0" max="6" name="pa"
                             oninput="onAnyChange()" type="number" value="3">
-                        <label for="paModifier" class="small mt-1">Modifier</label>
-                        <select class="form-control form-control-sm" id="paModifier" name="paModifier" onchange="onAnyChange()" aria-label="PA modifier" style="color: #212529 !important; background-color: #fff !important;">
-                            <option value="" selected style="color: #212529; background-color: #fff;">None</option>
-                            <option value="+X" style="color: #212529; background-color: #fff;">+X</option>
-                            <option value="-X" style="color: #212529; background-color: #fff;">-X</option>
-                        </select>
                     </div>
                 </div>
                 <div class="col-sm-2">
@@ -96,12 +101,6 @@
                         <label for="av" data-i18n="card.caracteristics.AV">AR</label>
                         <input class="form-control" id="av" min="0" max="11" name="av"
                             oninput="onAnyChange()" type="number" value="9">
-                        <label for="avModifier" class="small mt-1">Modifier</label>
-                        <select class="form-control form-control-sm" id="avModifier" name="avModifier" onchange="onAnyChange()" aria-label="AV modifier" style="color: #212529 !important; background-color: #fff !important;">
-                            <option value="" selected style="color: #212529; background-color: #fff;">None</option>
-                            <option value="+X" style="color: #212529; background-color: #fff;">+X</option>
-                            <option value="-X" style="color: #212529; background-color: #fff;">-X</option>
-                        </select>
                     </div>
                 </div>
             </div>
