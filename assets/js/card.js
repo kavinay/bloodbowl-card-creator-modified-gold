@@ -326,9 +326,6 @@ function readControls() {
     data.ag = document.getElementById("ag").value;
     data.pa = document.getElementById("pa").value;
     data.av = document.getElementById("av").value;
-    ["ma", "st", "ag", "pa", "av"].forEach(function (stat) {
-        data[stat + "Modifier"] = document.getElementById(stat + "Modifier").value;
-    });
     data.p_general = document.getElementById("p_general").checked;
     data.p_agility = document.getElementById("p_agility").checked;
     data.p_devious = document.getElementById("p_devious").checked;
@@ -510,22 +507,16 @@ function drawCardFrame(cardData){
         drawCapacity(AV, 500, 208);
     }
     // MA
-    drawNumber(cardData.ma, 130, 225, false);
+    drawCharacteristicStat(cardData.ma, 130, 225, false);
     // ST
-    drawNumber(cardData.st, 130, 375, false);
+    drawCharacteristicStat(cardData.st, 130, 375, false);
     // AG
-    drawNumber(cardData.ag, 130, 530, true);
+    drawCharacteristicStat(cardData.ag, 130, 530, true);
     // PA
     drawNumber(cardData.pa, 130, 680, true);
     //AV
     drawNumber(cardData.av, 130, 825, true);
 
-    // Characteristic modifiers are printed beside their corresponding stat icons.
-    drawCharacteristicModifier(cardData.maModifier, 190, 260);
-    drawCharacteristicModifier(cardData.stModifier, 190, 410);
-    drawCharacteristicModifier(cardData.agModifier, 190, 565);
-    drawCharacteristicModifier(cardData.paModifier, 190, 715);
-    drawCharacteristicModifier(cardData.avModifier, 190, 860);
 
 }
 
@@ -554,22 +545,28 @@ render = function (cardData) {
     
 }
 
-function drawCharacteristicModifier(modifier, x, y) {
-    if (modifier !== "+X" && modifier !== "-X") return;
+function drawCharacteristicStat(value, x, y, plus) {
+    const specialValues = ["3+X", "4+ -X"];
+    const statValue = String(value == null ? "" : value);
+    if (specialValues.indexOf(statValue) === -1) {
+        drawNumber(Number(statValue), x, y, plus);
+        return;
+    }
+
     const ctx = getContext();
     ctx.save();
-    ctx.font = "bold 27px brothers-regular";
+    ctx.font = (statValue.length > 4 ? "36px" : "43px") + " brothers-regular";
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
     ctx.lineJoin = "round";
-    ctx.lineWidth = 7;
+    ctx.lineWidth = 9;
     ctx.strokeStyle = "black";
-    ctx.strokeText(modifier, x, y);
-    ctx.lineWidth = 5;
+    ctx.strokeText(statValue, x - 2, y + 36);
+    ctx.lineWidth = 6;
     ctx.strokeStyle = "white";
-    ctx.strokeText(modifier, x, y);
+    ctx.strokeText(statValue, x - 2, y + 36);
     ctx.fillStyle = "#e5a21a";
-    ctx.fillText(modifier, x, y);
+    ctx.fillText(statValue, x - 2, y + 36);
     ctx.restore();
 }
 
@@ -636,9 +633,6 @@ async function writeControls(cardData) {
     $("#ag")[0].value = cardData.ag;
     $("#pa")[0].value = cardData.pa;
     $("#av")[0].value = cardData.av;
-    ["ma", "st", "ag", "pa", "av"].forEach(function (stat) {
-        $("#" + stat + "Modifier")[0].value = cardData[stat + "Modifier"] || "";
-    });
     $("#cardText")[0].value = cardData.cardText;
 
     document.getElementById('p_agility').checked = cardData.p_agility;
